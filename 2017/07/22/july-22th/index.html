@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>july-22th | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="apt 添加 1sudo add-apt-repository  ppa:alexeftimie/ppa 删除 1sudo add-apt-repository -r ppa:alexeftimie/ppa node 找到最新的下载地址，用wget命令下载到本地 1wget .. 解压命令 12xz -d tar -xvf mv 1mv  . /usr/local/node 配置环境变量 1234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="july-22th">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/july-22th/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="apt 添加 1sudo add-apt-repository  ppa:alexeftimie/ppa 删除 1sudo add-apt-repository -r ppa:alexeftimie/ppa node 找到最新的下载地址，用wget命令下载到本地 1wget .. 解压命令 12xz -d tar -xvf mv 1mv  . /usr/local/node 配置环境变量 1234">
+<meta property="og:updated_time" content="2017-07-22T07:56:18.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="july-22th">
+<meta name="twitter:description" content="apt 添加 1sudo add-apt-repository  ppa:alexeftimie/ppa 删除 1sudo add-apt-repository -r ppa:alexeftimie/ppa node 找到最新的下载地址，用wget命令下载到本地 1wget .. 解压命令 12xz -d tar -xvf mv 1mv  . /usr/local/node 配置环境变量 1234">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-july-22th" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/22/july-22th/" class="article-date">
+  <time datetime="2017-07-22T07:55:39.000Z" itemprop="datePublished">2017-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      july-22th
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apt</p>
+<p>添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository  ppa:alexeftimie/ppa</div></pre></td></tr></table></figure>
+<p>删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository -r ppa:alexeftimie/ppa</div></pre></td></tr></table></figure>
+<p>node</p>
+<p>找到最新的下载地址，用wget命令下载到本地</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget ..</div></pre></td></tr></table></figure>
+<p>解压命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xz -d </div><div class="line">tar -xvf</div></pre></td></tr></table></figure>
+<p>mv</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv  . /usr/local/node</div></pre></td></tr></table></figure>
+<p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vim /etc/profile</div><div class="line"># 在底部添加 PATH 变量</div><div class="line">export PATH=$PATH:/usr/local/node/bin</div><div class="line"># 最后保存并使其生效即可</div><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+<p>但是source在term退出之后就好像失效了</p>
+<p>hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># 创建目录</div><div class="line">mkdir hexo</div><div class="line"># 切换目录</div><div class="line">cd hexo</div><div class="line"># 安装Git(已安装可跳过)</div><div class="line">...</div><div class="line"># 安装 Hexo</div><div class="line">npm install -g hexo-cli</div><div class="line"># 初始化 Hexo</div><div class="line">hexo init</div></pre></td></tr></table></figure>
+<p>安装插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-index --save</div><div class="line">npm install hexo-generator-archive --save</div><div class="line">npm install hexo-generator-category --save</div><div class="line">npm install hexo-generator-tag --save</div><div class="line">npm install hexo-server --save</div><div class="line">npm install hexo-deployer-git --save   //这个用git需要</div><div class="line">npm install hexo-deployer-heroku --save</div><div class="line">npm install hexo-deployer-rsync --save</div><div class="line">npm install hexo-deployer-openshift --save</div><div class="line">npm install hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-stylus --save</div><div class="line">npm install hexo-generator-feed --save</div><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
+<p>修改Hexo配置文件_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:mocorochio/micorochio.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>在git完成后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 编译</div><div class="line">hexo generate</div><div class="line"># 在主机的hexo目录下 执行以下命令将自动更新到Github</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>新建文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;article&quot;</div></pre></td></tr></table></figure>
+<p>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//hexo g    生成</div><div class="line">//hexo d    部署</div><div class="line"></div><div class="line">hexo d -g</div></pre></td></tr></table></figure>
+<p>git</p>
+<p>1.配置本机全局git环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.email &quot;you@example.com&quot;</div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
+<p>2.生成SSH秘钥</p>
+<p>先确定你的VPS 有没有生成过ssh的key，<br>验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">less  ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<p><strong>如果报错</strong><br>执行下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># -C后面跟住你在github的用户名邮箱，这样公钥才会被github认可</div><div class="line"> ssh-keygen -t rsa -C example@126.com</div><div class="line"># 查看 公钥内容 稍后加入Github 账户的 sshkey中</div><div class="line"> less ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<p>你会看到一堆代码<br><strong>如果没有报错</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># -C后面跟住你在github的用户名邮箱，这样公钥才会被github认可</div><div class="line"> ssh-keygen -t rsa -C example@126.com</div><div class="line"># 回车后，输入一个文件夹名字，存储新的SSH 秘钥</div><div class="line">.ssh/github</div><div class="line"># 查看 公钥内容 稍后加入Github 账户的 sshkey中</div><div class="line"> less ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<p>将ssh秘钥添加到github中</p>
+<p>生成后，需要将秘钥放到github上去，登录你的github账号<br>进入秘钥设置面板:<a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a></p>
+<p>在执行<code>less ~/.ssh/id_rsa.pub</code>你会看到一堆长密码</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5f03mvu0002209qka2tsywt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/22/reinstall/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">reinstall</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/22/july-22th/">july-22th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/reinstall/">reinstall</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-16th/">july-16th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-14th/">july-14th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-8th/">july_8th</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
