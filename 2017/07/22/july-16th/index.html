@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>july-16th | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="july-16th(补档)行列转化 1234case when then else endIFref:http://www.cnblogs.com/SeaSky0606/p/4591135.htmlref:http://blog.csdn.net/kimsung/article/details/4983872 查看字符集： 1ref:http://database.51cto.com/art/20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="july-16th">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/july-16th/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="july-16th(补档)行列转化 1234case when then else endIFref:http://www.cnblogs.com/SeaSky0606/p/4591135.htmlref:http://blog.csdn.net/kimsung/article/details/4983872 查看字符集： 1ref:http://database.51cto.com/art/20">
+<meta property="og:updated_time" content="2017-07-22T07:34:41.553Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="july-16th">
+<meta name="twitter:description" content="july-16th(补档)行列转化 1234case when then else endIFref:http://www.cnblogs.com/SeaSky0606/p/4591135.htmlref:http://blog.csdn.net/kimsung/article/details/4983872 查看字符集： 1ref:http://database.51cto.com/art/20">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-july-16th" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/22/july-16th/" class="article-date">
+  <time datetime="2017-07-22T07:34:10.000Z" itemprop="datePublished">2017-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      july-16th
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="july-16th-补档"><a href="#july-16th-补档" class="headerlink" title="july-16th(补档)"></a>july-16th(补档)</h1><p>行列转化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">case when then else end</div><div class="line">IF</div><div class="line">ref:http://www.cnblogs.com/SeaSky0606/p/4591135.html</div><div class="line">ref:http://blog.csdn.net/kimsung/article/details/4983872</div></pre></td></tr></table></figure>
+<p>查看字符集：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref:http://database.51cto.com/art/201010/229171.htm</div></pre></td></tr></table></figure>
+<p>ERROR 1267 (HY000): Illegal mix of collations (utf8_general_ci,IMPLICIT) and (utf8_unicode_ci,IMPLICIT) for operation ‘=’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">编码问题</div><div class="line">ref:http://blog.csdn.net/crave_shy/article/details/23345869</div><div class="line"></div><div class="line">改好以后，再创建的就不会乱码，之前的就乱码。</div></pre></td></tr></table></figure>
+<p>mysqld: unrecognized service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">权限不够</div><div class="line">ubunutu：（不是mysqld），service 没启作用</div><div class="line">/etc/init.d/mysql restart </div><div class="line">ref:http://blog.csdn.net/piaopiaopiaopiaopiao/article/details/17288751</div></pre></td></tr></table></figure>
+<p>ERROR 2002?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">登不上数据库，然后配置文件中 的路径里面也是没有文件的。</div><div class="line">应该是之前的数据库进程没有结束，占据了端口</div></pre></td></tr></table></figure>
+<p>mysql 删除行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref：http://blog.csdn.net/apache6/article/details/2778878</div></pre></td></tr></table></figure>
+<p>mysql case when 和 if 差别不大</p>
+<p>有A B C三列,用SQL语句实现：当A列大于B列时选择A列否则选择B列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref:http://blog.csdn.net/u012110719/article/details/47133167</div></pre></td></tr></table></figure>
+<p>猜测，用了group by 之后 如果不用聚合（比如sum），只会查找每组第一个就结束了</p>
+<p>删除行</p>
+<p>having+条件语句</p>
+<p>group by 和 inner join 效率区别</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5ezd0ab0003dl9qpi31qglr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/22/july-14th/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">july-14th</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/22/july-16th/">july-16th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-14th/">july-14th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-8th/">july_8th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

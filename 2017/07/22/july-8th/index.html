@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>july_8th | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="july_8th(补档)mysql文档3.1. 连接与断开服务器 12shell&amp;gt; mysql -h host -u user -pmysql&amp;gt; QUIT 3.2. 输入查询 12mysql&amp;gt; SELECT VERSION(), CURRENT_DATE;mysql&amp;gt; SELECT VERSION(); SELECT NOW(); 3.3. 创建并使用数据库3.3.1. 创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="july_8th">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/july-8th/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="july_8th(补档)mysql文档3.1. 连接与断开服务器 12shell&amp;gt; mysql -h host -u user -pmysql&amp;gt; QUIT 3.2. 输入查询 12mysql&amp;gt; SELECT VERSION(), CURRENT_DATE;mysql&amp;gt; SELECT VERSION(); SELECT NOW(); 3.3. 创建并使用数据库3.3.1. 创">
+<meta property="og:updated_time" content="2017-07-22T07:32:21.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="july_8th">
+<meta name="twitter:description" content="july_8th(补档)mysql文档3.1. 连接与断开服务器 12shell&amp;gt; mysql -h host -u user -pmysql&amp;gt; QUIT 3.2. 输入查询 12mysql&amp;gt; SELECT VERSION(), CURRENT_DATE;mysql&amp;gt; SELECT VERSION(); SELECT NOW(); 3.3. 创建并使用数据库3.3.1. 创">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,126 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-july-16th" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/22/july-16th/" class="article-date">
-  <time datetime="2017-07-22T07:34:10.000Z" itemprop="datePublished">2017-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/22/july-16th/">july-16th</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="july-16th-补档"><a href="#july-16th-补档" class="headerlink" title="july-16th(补档)"></a>july-16th(补档)</h1><p>行列转化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">case when then else end</div><div class="line">IF</div><div class="line">ref:http://www.cnblogs.com/SeaSky0606/p/4591135.html</div><div class="line">ref:http://blog.csdn.net/kimsung/article/details/4983872</div></pre></td></tr></table></figure>
-<p>查看字符集：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref:http://database.51cto.com/art/201010/229171.htm</div></pre></td></tr></table></figure>
-<p>ERROR 1267 (HY000): Illegal mix of collations (utf8_general_ci,IMPLICIT) and (utf8_unicode_ci,IMPLICIT) for operation ‘=’</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">编码问题</div><div class="line">ref:http://blog.csdn.net/crave_shy/article/details/23345869</div><div class="line"></div><div class="line">改好以后，再创建的就不会乱码，之前的就乱码。</div></pre></td></tr></table></figure>
-<p>mysqld: unrecognized service</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">权限不够</div><div class="line">ubunutu：（不是mysqld），service 没启作用</div><div class="line">/etc/init.d/mysql restart </div><div class="line">ref:http://blog.csdn.net/piaopiaopiaopiaopiao/article/details/17288751</div></pre></td></tr></table></figure>
-<p>ERROR 2002?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">登不上数据库，然后配置文件中 的路径里面也是没有文件的。</div><div class="line">应该是之前的数据库进程没有结束，占据了端口</div></pre></td></tr></table></figure>
-<p>mysql 删除行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref：http://blog.csdn.net/apache6/article/details/2778878</div></pre></td></tr></table></figure>
-<p>mysql case when 和 if 差别不大</p>
-<p>有A B C三列,用SQL语句实现：当A列大于B列时选择A列否则选择B列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ref:http://blog.csdn.net/u012110719/article/details/47133167</div></pre></td></tr></table></figure>
-<p>猜测，用了group by 之后 如果不用聚合（比如sum），只会查找每组第一个就结束了</p>
-<p>删除行</p>
-<p>having+条件语句</p>
-<p>group by 和 inner join 效率区别</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5ezd0ab0003dl9qpi31qglr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-july-14th" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/22/july-14th/" class="article-date">
-  <time datetime="2017-07-22T07:33:16.000Z" itemprop="datePublished">2017-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/22/july-14th/">july-14th</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="july-14th-补档"><a href="#july-14th-补档" class="headerlink" title="july-14th(补档)"></a>july-14th(补档)</h1><p>mysql 基本数据类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timestamp</div></pre></td></tr></table></figure>
-<p>创建表</p>
-<p>插入数据</p>
-<p>执行外部脚本</p>
-<p>group by 分组聚合过程</p>
-<p>Q:用一条sql语句查询出“每门”课程都大于80分的学生姓名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">select distinct name from aa where name not in (select distinct name from aa where fengshu&lt;=80)  </div><div class="line">select name from table group by name having min(fenshu)&gt;80</div></pre></td></tr></table></figure>
-<p>Q:删除除了自动编号不同, 其他都相同的学生冗余信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR 1093 (HY000): You can&apos;t specify target table &apos;student2&apos; for update in FROM</div></pre></td></tr></table></figure>
-<p>as</p>
-<p>join</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inner join</div><div class="line">left join</div><div class="line">right join </div><div class="line">cross join = inner join(no where 的情况下)</div><div class="line">full join</div></pre></td></tr></table></figure>
-<p>union</p>
-<p>Q:要查询这张表中的每个职员的上司</p>
-<p>自连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">笛卡尔积</div></pre></td></tr></table></figure>
-<p>子查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">复杂度 M×N</div><div class="line">操作顺序</div><div class="line">子查询 就会 产生笛卡尔积？</div></pre></td></tr></table></figure>
-<p>优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. inner 显式 / 隐式</div><div class="line">2. inner join &gt; left join</div><div class="line">3. join &gt; 子查询</div><div class="line">4. on 和 where</div><div class="line">5. exist &gt; in</div></pre></td></tr></table></figure>
-<p>Q:一个叫 team 的表，里面只有一个字段name, 一共有4 条纪录，分别是a,b,c,d, 对应四个球对，现在四个球对进行比赛，用一条sql 语句显示所有可能的比赛组合.</p>
-<p>查询过程中 视图如何添加一列？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">直接select 多一列</div><div class="line">(inner join+where ) 可能有其他</div></pre></td></tr></table></figure>
-<p>逆置矩阵</p>
-<p>外连接 查询</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5ezd0a50001dl9qytpwv4ys" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-july-8th" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-july-8th" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/22/july-8th/" class="article-date">
   <time datetime="2017-07-22T07:30:53.000Z" itemprop="datePublished">2017-07-22</time>
@@ -191,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/22/july-8th/">july_8th</a>
+    <h1 class="article-title" itemprop="name">
+      july_8th
     </h1>
   
 
@@ -282,55 +167,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/22/hello-world/" class="article-date">
-  <time datetime="2017-07-22T06:51:12.703Z" itemprop="datePublished">2017-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/07/22/july-14th/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          july-14th
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/22/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2017/07/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5ezd09w0000dl9qegq58ixw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         

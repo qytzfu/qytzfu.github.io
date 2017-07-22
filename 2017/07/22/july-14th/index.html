@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>july-14th | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="july-14th(补档)mysql 基本数据类型 1timestamp 创建表 插入数据 执行外部脚本 group by 分组聚合过程 Q:用一条sql语句查询出“每门”课程都大于80分的学生姓名 12select distinct name from aa where name not in (select distinct name from aa where fengshu&amp;lt;=80)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="july-14th">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/july-14th/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="july-14th(补档)mysql 基本数据类型 1timestamp 创建表 插入数据 执行外部脚本 group by 分组聚合过程 Q:用一条sql语句查询出“每门”课程都大于80分的学生姓名 12select distinct name from aa where name not in (select distinct name from aa where fengshu&amp;lt;=80)">
+<meta property="og:updated_time" content="2017-07-22T07:33:51.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="july-14th">
+<meta name="twitter:description" content="july-14th(补档)mysql 基本数据类型 1timestamp 创建表 插入数据 执行外部脚本 group by 分组聚合过程 Q:用一条sql语句查询出“每门”课程都大于80分的学生姓名 12select distinct name from aa where name not in (select distinct name from aa where fengshu&amp;lt;=80)">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-july-14th" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/22/july-14th/" class="article-date">
+  <time datetime="2017-07-22T07:33:16.000Z" itemprop="datePublished">2017-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      july-14th
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="july-14th-补档"><a href="#july-14th-补档" class="headerlink" title="july-14th(补档)"></a>july-14th(补档)</h1><p>mysql 基本数据类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timestamp</div></pre></td></tr></table></figure>
+<p>创建表</p>
+<p>插入数据</p>
+<p>执行外部脚本</p>
+<p>group by 分组聚合过程</p>
+<p>Q:用一条sql语句查询出“每门”课程都大于80分的学生姓名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">select distinct name from aa where name not in (select distinct name from aa where fengshu&lt;=80)  </div><div class="line">select name from table group by name having min(fenshu)&gt;80</div></pre></td></tr></table></figure>
+<p>Q:删除除了自动编号不同, 其他都相同的学生冗余信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR 1093 (HY000): You can&apos;t specify target table &apos;student2&apos; for update in FROM</div></pre></td></tr></table></figure>
+<p>as</p>
+<p>join</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inner join</div><div class="line">left join</div><div class="line">right join </div><div class="line">cross join = inner join(no where 的情况下)</div><div class="line">full join</div></pre></td></tr></table></figure>
+<p>union</p>
+<p>Q:要查询这张表中的每个职员的上司</p>
+<p>自连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">笛卡尔积</div></pre></td></tr></table></figure>
+<p>子查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">复杂度 M×N</div><div class="line">操作顺序</div><div class="line">子查询 就会 产生笛卡尔积？</div></pre></td></tr></table></figure>
+<p>优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. inner 显式 / 隐式</div><div class="line">2. inner join &gt; left join</div><div class="line">3. join &gt; 子查询</div><div class="line">4. on 和 where</div><div class="line">5. exist &gt; in</div></pre></td></tr></table></figure>
+<p>Q:一个叫 team 的表，里面只有一个字段name, 一共有4 条纪录，分别是a,b,c,d, 对应四个球对，现在四个球对进行比赛，用一条sql 语句显示所有可能的比赛组合.</p>
+<p>查询过程中 视图如何添加一列？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">直接select 多一列</div><div class="line">(inner join+where ) 可能有其他</div></pre></td></tr></table></figure>
+<p>逆置矩阵</p>
+<p>外连接 查询</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5ezd0a50001dl9qytpwv4ys" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/22/july-16th/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          july-16th
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/22/july-8th/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">july_8th</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/22/july-16th/">july-16th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-14th/">july-14th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-8th/">july_8th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
