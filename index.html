@@ -61,6 +61,163 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql-1st" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/23/mysql-1st/" class="article-date">
+  <time datetime="2017-07-23T14:00:48.000Z" itemprop="datePublished">2017-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/23/mysql-1st/">mysql-1st</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据库系统三级结构的关系，下列叙述中正确的是（　　）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">模式,内模式,逻辑表示,物理实现</div><div class="line"></div><div class="line">数据库系统的三级模式结构是指数据库系统是由模式、外模式和内模式三级构成的.</div><div class="line"></div><div class="line">（1）模式 模式也称逻辑模式或概念模式,是数据库中全体数据的逻辑结构和特征的描述,是所有用户的公共数据视图.</div><div class="line"></div><div class="line">模式实际上是数据库数据在逻辑级上的视图.一个数据库只有一个模式.定义模式时不仅要定义数据的逻辑结构,而且要定义数据之间的联系,定义与数据有关的安全性、完整性要求.</div><div class="line"></div><div class="line">（2）外模式 外模式也称用户模式,它是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述,是数据库用户的数据视图,是与某一应用有关的数据的逻辑表示.外模式通常是模式的子集.一个数据库可以有多个外模式.应用程序都是和外模式打交道的.外模式是保证数据库安全性的一个有力措施.每个用户只能看见和访问所对应的外模式中的数据,数据库中的其余数据对他们是不可见的.</div><div class="line"></div><div class="line">（3）内模式 内模式也称存储模式,一个数据库只有一个内模式.它是数据物理结构和存储方式的描述,是数据在数据库内部的表示方式.例如,记录的存储方式是顺序结构存储还是B树结构存储；索引按什么方式组织；数据是否压缩,是否加密；数据的存储记录结构有何规定等.</div></pre></td></tr></table></figure>
+<p>数据库对象的四种视图模式，不包括（）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?</div></pre></td></tr></table></figure>
+<p>消除了部分函数依赖的 1NF的关系模式，必定是   （）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">第一范式（1NF）：强调的是列的原子性，即列不能够再分成其他几列。 </div><div class="line"> </div><div class="line">第二范式（2NF）：首先是 1NF，另外包含两部分内容，一是表必须有一个主键；二是没有包含在主键中的列必须完全依赖于主键，而不能只依赖于主键的一部分。 </div><div class="line">考虑一个订单明细表：【OrderDetail】（OrderID，ProductID，UnitPrice，Discount，Quantity，ProductName）。 </div><div class="line">因为我们知道在一个订单中可以订购多种产品，所以单单一个 OrderID 是不足以成为主键的，主键应该是（OrderID，ProductID）。显而易见 Discount（折扣），Quantity（数量）完全依赖（取决）于主键（OderID，ProductID），而 UnitPrice，ProductName 只依赖于 ProductID。所以 OrderDetail 表不符合 2NF。不符合 2NF 的设计容易产生冗余数据。 </div><div class="line">可以把【OrderDetail】表拆分为【OrderDetail】（OrderID，ProductID，Discount，Quantity）和【Product】（ProductID，UnitPrice，ProductName）来消除原订单表中UnitPrice，ProductName多次重复的情况。 </div><div class="line">◆ 第三范式（3NF）：首先是 2NF，另外非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列 A 依赖于非主键列 B，非主键列 B 依赖于主键的情况。</div></pre></td></tr></table></figure>
+<p>使用CREATE SCHEMA 语句建立的是（）   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create database 与 create schema 是相同的。</div><div class="line"></div><div class="line">CREATE DATABASE creates a database with the given name. To use this statement, you need the CREATE privilege for the database. CREATE SCHEMA is a synonym for CREATE DATABASE as of MySQL 5.0.2.</div></pre></td></tr></table></figure>
+<p>DTS 不可以进行的转换是（ ）？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Data Transformation Service(数据转化服务)</div></pre></td></tr></table></figure>
+<p>下列不属于数据库并发操作带来的问题是（）？</p>
+<p>关系数据库规范化的目的是为了解决关系数据库中的（ ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">插入、删除异常及数据冗余问题</div></pre></td></tr></table></figure>
+<p>另外的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">查询速度低的问题</div><div class="line">数据操作复杂的问题</div><div class="line">数据安全性和完整性保障的问题</div></pre></td></tr></table></figure>
+<hr>
+<p>单个用户使用的数据视图的描述称为 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">外模式也称子模式（Subschema）或用户模式，是数据库用户（包括应用程序员和最终用户）能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。</div></pre></td></tr></table></figure>
+<p><img src="http://new.51cto.com/files/uploadimg/20080115/195436599.jpg?_=2229613" alt="img"></p>
+<p>全文索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>存储过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>数据页分解(插入导致)</p>
+<p>一条不成文的规定，那就是给每张表一个自增主键。那么自增主键除了有数据的唯一性外，还有什么所用呢？为什么要有自增主键？</p>
+<ul>
+<li>主键递增，数据行写入可以提高插入性能，可以避免page分裂，减少表碎片提升空间和内存的使用</li>
+</ul>
+<p><img src="/home/han/图片/分页情况.png" alt="分页情况"></p>
+<ul>
+<li>主键要选择较短的数据类型， Innodb引擎普通索引都会保存主键的值，较短的数据类型可以有效的减少索引的磁盘空间，提高索引的缓存效率</li>
+<li>无主键的表删除，在row模式的主从架构，会导致备库夯住 ?</li>
+</ul>
+<h2 id="聚集索引（Clustered-Index）"><a href="#聚集索引（Clustered-Index）" class="headerlink" title="聚集索引（Clustered Index）"></a>聚集索引（Clustered Index）</h2><p>一个聚集索引定义了表中数据的物理存储顺序。如何理解聚集索引呢，好比一个电话本，比如一个电话本是按照姓氏排序，并且电话号码紧跟着后面。因为聚集索引决定了表中数据的物理存储顺序，那么一个表则有且只有一个聚集索引。一个聚集索引可以包含多个列。好比一个电话本是基于名字，姓氏同时排序。</p>
+<h2 id="Innodb的聚集索引"><a href="#Innodb的聚集索引" class="headerlink" title="Innodb的聚集索引"></a>Innodb的聚集索引</h2><p>Innodb的存储索引是基于B+tree，理所当然，聚集索引也是基于B+tree。与非聚集索引的区别则是，聚集索引既存储了索引，也存储了行值。当一个表有一个聚集索引，它的数据是存储在索引的叶子页（leaf pages）。因此innodb也能理解为基于索引的表。</p>
+<p><strong> 那么Innodb如何决定那个索引作为聚集索引呢？\</strong></p>
+<hr>
+<h3 id="Innodb如何选择一个聚集索引"><a href="#Innodb如何选择一个聚集索引" class="headerlink" title="Innodb如何选择一个聚集索引"></a>Innodb如何选择一个聚集索引</h3><p>对于Innodb，主键毫无疑问是一个聚集索引。但是当一个表没有主键，或者没有一个索引，Innodb会如何处理呢。请看如下规则</p>
+<p>如果一个主键被定义了，那么这个主键就是作为聚集索引</p>
+<p>如果没有主键被定义，那么该表的第一个唯一非空索引被作为聚集索引</p>
+<p>如果没有主键也没有合适的唯一索引，那么innodb内部会生成一个隐藏的主键作为聚集索引，这个隐藏的主键是一个6个字节的列，改列的值会随着数据的插入自增。</p>
+<p><strong>还有一个需要注意的是：</strong></p>
+<p>次级索引的叶子节点并不存储行数据的物理地址。而是存储的该行的主键值。</p>
+<p>所以：一次级索引包含了两次查找。一次是查找次级索引自身。然后查找主键（聚集索引）??</p>
+<hr>
+<h3 id="现在应该明白了吧，建立自增主键的原因是："><a href="#现在应该明白了吧，建立自增主键的原因是：" class="headerlink" title="现在应该明白了吧，建立自增主键的原因是："></a>现在应该明白了吧，建立自增主键的原因是：</h3><p>Innodb中的每张表都会有一个聚集索引，而聚集索引又是以<strong>物理磁盘顺序</strong>来存储的，自增主键会把数据自动向后插入，避免了插入过程中的聚集索引排序问题。聚集索引的排序，必然会带来大范围的数据的物理移动，这里面带来的磁盘IO性能损耗是非常大的。<br>而如果聚集索引上的值可以改动的话，那么也会触发物理磁盘上的移动，于是就可能出现page分裂，表碎片横生。</p>
+<p>解读中的第二点相信看了上面关于聚集索引的解释后就很清楚了。</p>
+<hr>
+<p>虽然遵循上面的原则也没错，但某些特殊的情况也是可以自己指定一些非自增主键为聚集索引的。如：</p>
+<ul>
+<li>当数据量大，但长时间不会被更新的；</li>
+<li>新生成的数据的索引本来就是按照自增的顺序增加的等等。</li>
+</ul>
+<p>举个栗子，（只是栗子啊，现实中不太可能）：<br>有一家公司里的员工上百万，有关员工的个人信息几年都不会发生变化，那么以员工的user_id号来作为各个表的索引就很适合。因为一个员工的信息都按照物理顺序呢排列在一起了，避免了磁盘移动查找数据的IO时间。比如说员工属于几个部门，一下子就查到了，不同分不同的地址去挨个进行磁盘扫描。</p>
+<p>栗子从简，哈哈哈哈，就这样子吧，我也不太会写，简单的记录下来了~</p>
+<p>SQL语言共分为四大类：数据查询语言DQL，数据操纵语言DML，数据定义语言DDL，数据控制语言DCL。</p>
+<ol>
+<li>数据查询语言DQL<br>数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE<br>子句组成的查询块：<br>SELECT &lt;字段名表&gt;<br>FROM &lt;表或视图名&gt;<br>WHERE &lt;查询条件&gt;</li>
+</ol>
+<p>2 .数据操纵语言DML<br>数据操纵语言DML主要有三种形式：<br>1) 插入：INSERT<br>2) 更新：UPDATE<br>3) 删除：DELETE</p>
+<ol>
+<li>数据定义语言DDL<br>数据定义语言DDL用来创建数据库中的各种对象—–表、视图、<br>索引、同义词、聚簇等如：<br>CREATE TABLE/VIEW/INDEX/SYN/CLUSTER<br>| | | | |<br>表 视图 索引 同义词 簇</li>
+</ol>
+<p>DDL操作是隐性提交的！不能rollback</p>
+<ol>
+<li>数据控制语言DCL<br>数据控制语言DCL用来授予或回收访问数据库的某种特权，并控制<br>数据库操纵事务发生的时间及效果，对数据库实行监视等。如：<br>1) GRANT：授权。</li>
+</ol>
+<p>2) ROLLBACK [WORK] TO [SAVEPOINT]：回退到某一点。<br>回滚—ROLLBACK<br>回滚命令使数据库状态回到上次最后提交的状态。其格式为：<br>SQL&gt;ROLLBACK;</p>
+<p>3) COMMIT [WORK]：提交。</p>
+<p>​    在数据库的插入、删除和修改操作时，只有当事务在提交到数据<br>库时才算完成。在事务提交前，只有操作数据库的这个人才能有权看<br>到所做的事情，别人只有在最后提交完成后才可以看到。<br>提交数据有三种类型：显式提交、隐式提交及自动提交。下面分<br>别说明这三种类型。</p>
+<p>(1) 显式提交<br>用COMMIT命令直接完成的提交为显式提交。其格式为：<br>SQL&gt;COMMIT；</p>
+<p>(2) 隐式提交<br>用SQL命令间接完成的提交为隐式提交。这些命令是：<br>ALTER，AUDIT，COMMENT，CONNECT，CREATE，DISCONNECT，DROP，<br>EXIT，GRANT，NOAUDIT，QUIT，REVOKE，RENAME。</p>
+<p>(3) 自动提交<br>若把AUTOCOMMIT设置为ON，则在插入、修改、删除语句执行后，<br>系统将自动进行提交，这就是自动提交。其格式为：<br>SQL&gt;SET AUTOCOMMIT ON；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/23/mysql-1st/" data-id="cj5gsl5lf0003bt9qho1mkkvh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-july-23th" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/23/july-23th/" class="article-date">
+  <time datetime="2017-07-23T13:58:47.000Z" itemprop="datePublished">2017-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/23/july-23th/">july-23th</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="markdown-怎么生成目录"><a href="#markdown-怎么生成目录" class="headerlink" title="markdown 怎么生成目录"></a>markdown 怎么生成目录</h3><h3 id="gnome-screenshot-a-截图"><a href="#gnome-screenshot-a-截图" class="headerlink" title="gnome-screenshot -a 截图"></a>gnome-screenshot -a 截图</h3><h3 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h3><h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><h3 id="索引原则"><a href="#索引原则" class="headerlink" title="索引原则"></a>索引原则</h3><p>1.索引越少越好<br>原因：主要在修改数据时，第个索引都要进行更新，降低写速度。<br>2.最窄的字段放在键的左边<br>3.避免file sort排序，临时表和表扫描.</p>
+<h3 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引:"></a>复合索引:</h3><p>两个或更多个列上的索引被称作复合索引</p>
+<p>利用索引中的附加列，您可以缩小搜索的范围，但使用一个具有两列的索引不同于使用两个单独的索引。复合索引的结构与电话簿类似，人名由姓和名构成，电话簿首先按姓氏对进行排序，然后按名字对有相同姓氏的人进行排序。如果您知道姓，电话簿将非常有用；如果您知道姓和名，电话簿则更为有用，但如果您只知道名不姓，电话簿将没有用处。<br>所以说创建复合索引时，<strong>应该仔细考虑列的顺序</strong>。对索引中的所有列执行搜索或仅对前几列执行搜索时，复合索引非常有用；仅对后面的任意列执行搜索时，复合索引则没有用处。<br>如：建立 姓名、年龄、性别的复合索引。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">对于复合索引:Mysql从左到右的使用索引中的字段，一个查询可以只使用索引中的一部份，但只能是最左侧部分。例如索引是key index (a,b,c). 可以支持a | a,b| a,b,c 3种组合进行查找，但不支持 b,c进行查找 .当最左侧字段是常量引用时，索引就十分有效。下面用几个例子对比查询条件的不同对性能影响.</div><div class="line"></div><div class="line">create table test(</div><div class="line">a int,</div><div class="line">b int,</div><div class="line">c int,</div><div class="line">KEY a(a,b,c)</div><div class="line">);</div><div class="line"></div><div class="line">优: select * from test where a=10 and b&gt;50</div><div class="line">差: select * from test where a50</div><div class="line"></div><div class="line">优: select * from test where order by a</div><div class="line">差: select * from test where order by b</div><div class="line">差: select * from test where order by c</div><div class="line"></div><div class="line">优: select * from test where a=10 order by a</div><div class="line">优: select * from test where a=10 order by b</div><div class="line">差: select * from test where a=10 order by c</div><div class="line"></div><div class="line">优: select * from test where a&gt;10 order by a</div><div class="line">差: select * from test where a&gt;10 order by b</div><div class="line">差: select * from test where a&gt;10 order by c</div><div class="line"></div><div class="line">优: select * from test where a=10 and b=10 order by a</div><div class="line">优: select * from test where a=10 and b=10 order by b</div><div class="line">优: select * from test where a=10 and b=10 order by c</div><div class="line"></div><div class="line">优: select * from test where a=10 and b=10 order by a</div><div class="line">优: select * from test where a=10 and b&gt;10 order by b</div><div class="line">差: select * from test where a=10 and b&gt;10 order by c</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果经常需要同时对两个字段进行AND查询,那么使用两个单独索引不如建立一个复合索引，因为两个单独索引通常数据库只能使用其中一个，而使用复合索引因为索引本身就对应到两个字段上的，效率会有很大提高。???</div></pre></td></tr></table></figure>
+<h2 id="复合索引的优点和注意事项"><a href="#复合索引的优点和注意事项" class="headerlink" title="复合索引的优点和注意事项"></a>复合索引的优点和注意事项</h2><h3 id="聚集索引-与-非聚集索引区别"><a href="#聚集索引-与-非聚集索引区别" class="headerlink" title="聚集索引 与 非聚集索引区别"></a>聚集索引 与 非聚集索引区别</h3><h2 id="Mysql索引实现："><a href="#Mysql索引实现：" class="headerlink" title="Mysql索引实现："></a><strong>Mysql索引实现：</strong></h2><p>　　B-tree，B是balance，一般用于<strong>数据库的索引</strong>。使用B-tree结构可以显著减少定位记录时所经历的中间过程，从而加快存取速度。而B+tree是B-tree的一个变种，MySQL就普遍使用B+tree实现其索引结构。　　</p>
+<p>　　一般来说，索引本身也很大，不可能全部存储在内存中，因此<strong>索引往往以索引文件的形式存储的磁盘上</strong>。这样的话，索引查找过程中就要产生磁盘I/O消耗，相对于内存存取，I/O存取的消耗要高几个数量级，所以评价一个数据结构作为索引的优劣最重要的指标就是在查找过程中磁盘I/O操作次数的渐进复杂度。换句话说，索引的结构组织要尽量减少查找过程中磁盘I/O的存取次数。</p>
+<p>　　为了达到这个目的，磁盘按需读取，要求每次都会预读的长度一般为页的整数倍。而且数据库系统将一个节点的大小设为等于一个页，这样每个节点只需要一次I/O就可以完全载入。每次新建节点时，直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，加之计算机存储分配都是按页对齐的，就实现了一个node只需一次I/O。并把B-tree中的m值设的非常大，就会让树的高度降低，有利于一次完全载入</p>
+<p>dns 和 host</p>
+<p>b树 -&gt; b-树 -&gt;b+树 -&gt;b*树</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">typedef struct BTNode </div><div class="line">&#123;</div><div class="line">    int             keynum;        // 结点中关键字个数，即结点的大小</div><div class="line">    struct BTNode  *parent;        // 指向双亲结点</div><div class="line">    KeyType         key[m + 1];      // 关键字向量，0号单元未用</div><div class="line">    struct BTNode  *ptr[m + 1];      // 子树指针向量</div><div class="line">&#125; BTNode, *BTree;</div></pre></td></tr></table></figure>
+<p>在MySQL数据库中，有<strong>四种索引</strong>：聚集索引(主键索引)、普通索引、唯一索引以及我们这里将要介绍的全文索引</p>
+<h3 id="mysql-触发器"><a href="#mysql-触发器" class="headerlink" title="mysql 触发器"></a>mysql 触发器</h3><h3 id="mysql-存储过程"><a href="#mysql-存储过程" class="headerlink" title="mysql 存储过程"></a>mysql 存储过程</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/23/july-23th/" data-id="cj5gsl5ki0001bt9qz3m7vb9x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-july-22th" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/22/july-22th/" class="article-date">
@@ -127,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5f03mvu0002209qka2tsywt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5gsl5mt0007bt9q7wet1ut6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5f03mvy0004209qlylx996o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5gsl5mk0005bt9qzwpjdjfj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5f03mvq0001209qxa55nmi7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5gsl5lh0004bt9qfgpm6dcq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5f03mvj0000209qok2bqsgd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5gsl5lb0002bt9qw5q7dz8e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -397,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5f03mvw0003209qlkuku61l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5gsl5mp0006bt9q07g8dlhl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5f03mw20005209qvg9eg7ec" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5gsl5jx0000bt9qklaapxua" class="article-share-link">Share</a>
       
       
     </footer>
@@ -482,6 +639,14 @@
       <ul>
         
           <li>
+            <a href="/2017/07/23/mysql-1st/">mysql-1st</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/july-23th/">july-23th</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/22/july-22th/">july-22th</a>
           </li>
         
@@ -491,14 +656,6 @@
         
           <li>
             <a href="/2017/07/22/july-16th/">july-16th</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/22/july-14th/">july-14th</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/22/july-8th/">july_8th</a>
           </li>
         
       </ul>
