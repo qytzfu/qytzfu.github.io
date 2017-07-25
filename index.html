@@ -61,6 +61,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-exercise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/exercise/" class="article-date">
+  <time datetime="2017-07-25T14:38:46.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/exercise/">exercise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql 日志文件 </p>
+<p>主从架构</p>
+<p>delete table <tablename></tablename></p>
+<p>索引只能加快查询速度么?</p>
+<p>投影 select  / 选择 where</p>
+<p>主键约束</p>
+<p>E-R 模型转换为关系模型</p>
+<p>​    ref:<a href="http://blog.csdn.net/legend050709/article/details/39737653" target="_blank" rel="external">http://blog.csdn.net/legend050709/article/details/39737653</a></p>
+<p>概念模型、逻辑模型、物理模型</p>
+<p>​    ref:<a href="http://blog.csdn.net/zmx729618/article/details/45059805" target="_blank" rel="external">http://blog.csdn.net/zmx729618/article/details/45059805</a></p>
+<p>三级模式结构：外模式、模式和内模式</p>
+<p>​    ref:<a href="http://blog.csdn.net/liaohong940908/article/details/51906697" target="_blank" rel="external">http://blog.csdn.net/liaohong940908/article/details/51906697</a></p>
+<p>alter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">更新表 alter table     【最常用的就是定义外键】</div><div class="line">// alter table vendors add vend_phone char(20);</div><div class="line">//alter table vendors drop column vend_phone;</div><div class="line">// alter table stu change stu_name stunames char(2);</div><div class="line">//alter table orderitems add constraint fk_orderitems_orders foreign key(order_num) references orders(order_num);</div><div class="line"> </div><div class="line">删除表 drop table tname;    // 删除的是整个表，删除表没有确认，也不能撤销，</div><div class="line"> </div><div class="line">重命名表   rename table tname1 to tname2 , tname3 to tname4; </div><div class="line">// 表的重命名，可以多个同时重命名。</div></pre></td></tr></table></figure>
+<p>sql绑定变量</p>
+<p>​    ref:<a href="http://blog.csdn.net/maray/article/details/7663598" target="_blank" rel="external">http://blog.csdn.net/maray/article/details/7663598</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/25/exercise/" data-id="cj5jouqce0000h49qyxshv9nd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql-1st" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/23/mysql-1st/" class="article-date">
@@ -160,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/mysql-1st/" data-id="cj5gsl5lf0003bt9qho1mkkvh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/mysql-1st/" data-id="cj5jouqd00007h49qag9d1m7e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/july-23th/" data-id="cj5gsl5ki0001bt9qz3m7vb9x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/july-23th/" data-id="cj5jouqcv0005h49qr5kkq0ua" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5gsl5mt0007bt9q7wet1ut6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5jouqcs0004h49q3rkw0ud9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5gsl5mk0005bt9qzwpjdjfj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5jouqd90008h49qwcw2m2t5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5gsl5lh0004bt9qfgpm6dcq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5jouqcs0003h49qhd9d2jdq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5gsl5lb0002bt9qw5q7dz8e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5jouqcq0002h49qntg7o9js" class="article-share-link">Share</a>
       
       
     </footer>
@@ -554,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5gsl5mp0006bt9q07g8dlhl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5jouqcz0006h49qaa2xwfjr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -599,7 +651,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5gsl5jx0000bt9qklaapxua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5jouqcm0001h49qjvxtwma9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -639,6 +691,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/25/exercise/">exercise</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/23/mysql-1st/">mysql-1st</a>
           </li>
         
@@ -652,10 +708,6 @@
         
           <li>
             <a href="/2017/07/22/reinstall/">reinstall</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/22/july-16th/">july-16th</a>
           </li>
         
       </ul>

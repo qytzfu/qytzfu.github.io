@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>exercise | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mysql 日志文件  主从架构 delete table  索引只能加快查询速度么? 投影 select  / 选择 where 主键约束 E-R 模型转换为关系模型 ​    ref:http://blog.csdn.net/legend050709/article/details/39737653 概念模型、逻辑模型、物理模型 ​    ref:http://blog.csdn.net/zm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="exercise">
+<meta property="og:url" content="http://yoursite.com/2017/07/25/exercise/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mysql 日志文件  主从架构 delete table  索引只能加快查询速度么? 投影 select  / 选择 where 主键约束 E-R 模型转换为关系模型 ​    ref:http://blog.csdn.net/legend050709/article/details/39737653 概念模型、逻辑模型、物理模型 ​    ref:http://blog.csdn.net/zm">
+<meta property="og:updated_time" content="2017-07-25T14:40:17.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="exercise">
+<meta name="twitter:description" content="mysql 日志文件  主从架构 delete table  索引只能加快查询速度么? 投影 select  / 选择 where 主键约束 E-R 模型转换为关系模型 ​    ref:http://blog.csdn.net/legend050709/article/details/39737653 概念模型、逻辑模型、物理模型 ​    ref:http://blog.csdn.net/zm">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-exercise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/exercise/" class="article-date">
+  <time datetime="2017-07-25T14:38:46.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      exercise
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql 日志文件 </p>
+<p>主从架构</p>
+<p>delete table <tablename></tablename></p>
+<p>索引只能加快查询速度么?</p>
+<p>投影 select  / 选择 where</p>
+<p>主键约束</p>
+<p>E-R 模型转换为关系模型</p>
+<p>​    ref:<a href="http://blog.csdn.net/legend050709/article/details/39737653" target="_blank" rel="external">http://blog.csdn.net/legend050709/article/details/39737653</a></p>
+<p>概念模型、逻辑模型、物理模型</p>
+<p>​    ref:<a href="http://blog.csdn.net/zmx729618/article/details/45059805" target="_blank" rel="external">http://blog.csdn.net/zmx729618/article/details/45059805</a></p>
+<p>三级模式结构：外模式、模式和内模式</p>
+<p>​    ref:<a href="http://blog.csdn.net/liaohong940908/article/details/51906697" target="_blank" rel="external">http://blog.csdn.net/liaohong940908/article/details/51906697</a></p>
+<p>alter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">更新表 alter table     【最常用的就是定义外键】</div><div class="line">// alter table vendors add vend_phone char(20);</div><div class="line">//alter table vendors drop column vend_phone;</div><div class="line">// alter table stu change stu_name stunames char(2);</div><div class="line">//alter table orderitems add constraint fk_orderitems_orders foreign key(order_num) references orders(order_num);</div><div class="line"> </div><div class="line">删除表 drop table tname;    // 删除的是整个表，删除表没有确认，也不能撤销，</div><div class="line"> </div><div class="line">重命名表   rename table tname1 to tname2 , tname3 to tname4; </div><div class="line">// 表的重命名，可以多个同时重命名。</div></pre></td></tr></table></figure>
+<p>sql绑定变量</p>
+<p>​    ref:<a href="http://blog.csdn.net/maray/article/details/7663598" target="_blank" rel="external">http://blog.csdn.net/maray/article/details/7663598</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/25/exercise/" data-id="cj5jouqce0000h49qyxshv9nd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/23/mysql-1st/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql-1st</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/25/exercise/">exercise</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/mysql-1st/">mysql-1st</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/july-23th/">july-23th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/july-22th/">july-22th</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/22/reinstall/">reinstall</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
