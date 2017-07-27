@@ -61,6 +61,102 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-netty" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/28/netty/" class="article-date">
+  <time datetime="2017-07-27T16:25:02.000Z" itemprop="datePublished">2017-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/28/netty/">netty</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="netty-servers-require-3"><a href="#netty-servers-require-3" class="headerlink" title="netty servers require :(3#)"></a>netty servers require :(3#)</h3><ol>
+<li>channelHandler</li>
+<li>bootstrapping</li>
+</ol>
+<p>future &amp; callback</p>
+<h3 id="the-core-business-logic-implemented-by-EchoServerHandler-3"><a href="#the-core-business-logic-implemented-by-EchoServerHandler-3" class="headerlink" title="the core business logic implemented by EchoServerHandler(3#)"></a>the core business logic implemented by EchoServerHandler(3#)</h3><p>ChannelInboundHandler (defines methods for acting on inbound events)</p>
+<p>ChannelInboundHandlerAdapter</p>
+<ul>
+<li>channelRead() —Called for each incoming message</li>
+<li>channelReadComplete() —Notifies the handler that the last call made to channel-Read() was the last message in the current batch</li>
+<li>exceptionCaught() —Called if an exception is thrown during the read operation</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Sharable</div><div class="line">public class EchoServerHandler extends ChannelInboundHandlerAdapter &#123;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>@sharable , ChannelInboundHandlerAdapter</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void channelRead(ChannelHandlerContext ctx, Object msg) &#123;</div><div class="line">  ByteBuf in = (ByteBuf) msg;</div><div class="line">  System.out.println(</div><div class="line">  &quot;Server received: &quot; + in.toString(CharsetUtil.UTF_8));</div><div class="line">  ctx.write(in);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Object msg ? 从哪里转化来的</p>
+<p>ByteBuf, ChannelHandlerContext ctx</p>
+<p>without flush?</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void channelReadComplete(ChannelHandlerContext ctx) &#123;</div><div class="line">	ctx.writeAndFlush(Unpooled.EMPTY_BUFFER).addListener(ChannelFutureListener.CLOSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>flush</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void exceptionCaught(ChannelHandlerContext ctx,</div><div class="line">Throwable cause) &#123;</div><div class="line">  cause.printStackTrace();</div><div class="line">  ctx.close();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="bootstrapping-the-server-3"><a href="#bootstrapping-the-server-3" class="headerlink" title="bootstrapping the server(3#)"></a>bootstrapping the server(3#)</h3><ul>
+<li>Bind to the port on which the server will listen for and accept incoming connection requests</li>
+<li>Configure Channels to notify an EchoServerHandler instance about inbound</li>
+</ul>
+<p>messages</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public class EchoServer &#123;</div><div class="line">	private final int port;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public void start() throws Exception &#123;</div><div class="line">	final EchoServerHandler serverHandler = new EchoServerHandler();</div><div class="line">	EventLoopGroup group = new NioEventLoopGroup();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>eventLoopGroup</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ServerBootstrap sb = new ServerBootstrap();</div><div class="line">sb.group(group) // 绑定线程池</div><div class="line">	.channel(NioServerSocketChannel.class) // 指定使用的channel</div><div class="line">	.localAddress(this.port)// 绑定监听端口</div><div class="line">	.childHandler(new ChannelInitializer&lt;SocketChannel&gt;() &#123; // 绑定客户端连接时候触发操作</div><div class="line">		@Override</div><div class="line">		protected void initChannel(SocketChannel ch) throws Exception &#123;</div><div class="line">		System.out.println(&quot;connected...; Client:&quot; + ch.remoteAddress());</div><div class="line">		ch.pipeline().addLast(new EchoServerHandler()); // 客户端触发操作</div><div class="line">		&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>group(), channel(),childHandler(),ChannelInitializer, ChannelPipeline</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ChannelFuture f = b.bind().sync();//sync wait for bind complete</div><div class="line">f.channel().closeFuture().sync(); // wait</div></pre></td></tr></table></figure>
+<p>echo client:</p>
+<ol>
+<li>Connect to the server</li>
+<li>Send one or more messages</li>
+<li>For each message, wait for and receive the same message back from the server</li>
+<li>Close the connection</li>
+</ol>
+<blockquote>
+<p>ChannelInboundHandler</p>
+</blockquote>
+<ul>
+<li>channelActive() —Called after the connection to the server is established</li>
+<li>channelRead0() —Called when a message is received from the server</li>
+<li>exceptionCaught() —Called if an exception is raised during processing</li>
+</ul>
+<blockquote>
+<p>SimpleChannelInboundHandler</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/28/netty/" data-id="cj5mnho3m0008dw9q1sqg081i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-exercise" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/25/exercise/" class="article-date">
@@ -103,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/exercise/" data-id="cj5jouqce0000h49qyxshv9nd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/exercise/" data-id="cj5mnho270000dw9q5cui9212" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/mysql-1st/" data-id="cj5jouqd00007h49qag9d1m7e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/mysql-1st/" data-id="cj5mnho3h0007dw9qgchrl9q2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/23/july-23th/" data-id="cj5jouqcv0005h49qr5kkq0ua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/23/july-23th/" data-id="cj5mnho2o0004dw9qf7ds92kq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5jouqcs0004h49q3rkw0ud9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-22th/" data-id="cj5mnho2u0005dw9qnkhyi0hz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -381,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5jouqd90008h49qwcw2m2t5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/reinstall/" data-id="cj5mnho3n0009dw9ql8brfan3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5jouqcs0003h49qhd9d2jdq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-16th/" data-id="cj5mnho2m0003dw9qcm8xtymq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -498,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5jouqcq0002h49qntg7o9js" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-14th/" data-id="cj5mnho2j0002dw9qw7wcooyu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -606,7 +702,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5jouqcz0006h49qaa2xwfjr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/july-8th/" data-id="cj5mnho3f0006dw9quj37nkpn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -651,7 +747,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5jouqcm0001h49qjvxtwma9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/22/hello-world/" data-id="cj5mnho2f0001dw9q7ogvx99u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,6 +787,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/28/netty/">netty</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/25/exercise/">exercise</a>
           </li>
         
@@ -704,10 +804,6 @@
         
           <li>
             <a href="/2017/07/22/july-22th/">july-22th</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/22/reinstall/">reinstall</a>
           </li>
         
       </ul>
